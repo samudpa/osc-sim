@@ -1,7 +1,7 @@
 # osc-sim
 **osc-sim** is a realistic, CUDA-accelerated CRT oscilloscope simulator and renderer for audio visualization, built on CuPy.
 
-- [Overview](#overview-and-features)
+- [Overview](#overview)
 - [Usage](#usage)
 - [Parameters](#parameters)
 
