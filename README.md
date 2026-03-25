@@ -12,7 +12,7 @@
 It does so by modelling the light curve of the phosphor display as a bright, instantly-decaying contribution (_fluorescence_) and a dim, slow-decaying exponential contribution (_phosphor persistence_), while accounting for the finite shutter speed of the camera. Optionally, these two contributions can be given different colors (as seen in some radar phosphor displays).
 
 ## Demo
-[![Demo](assets/demo.jpg)](https://www.youtube.com/watch?v=RuB52WjAXdg)
+[![Demo](https://img.youtube.com/vi/RuB52WjAXdg/mqdefault.jpg)](https://www.youtube.com/watch?v=RuB52WjAXdg)
 
 ## Usage
 **Requirements:** This Python script requires `ffmpeg`, a CUDA-enabled GPU and a Python installation with the `numpy`, `numba` and `cupy` (https://docs.cupy.dev/en/stable/install.html) packages.
