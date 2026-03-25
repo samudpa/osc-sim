@@ -42,7 +42,7 @@ class AnalogOsc:
         width=1080, height=1080, fps=60, shutter=0.5,                       # camera
         subsampling=1000000, upscaling=2, scale=0.9,                        # simulation quality
         decay_time=0.015, beam_power=7e6, flash_factor=1.5,                 # physics
-        line_width=1, glow_radius=15, glow_downscale_factor=2,              # blur kernel
+        beam_spread=1, glow_radius=15, glow_downscale_factor=2,              # blur kernel
         jitter=1e-3, jitter_corr=1/60, grain=0.08, background_level=0.,     # synthetic noise
         grid_opacity=0.99, grid_params=None,                                # graticule
         dual_color=False, xy_mode=True, rotate_scope=False, flip_y=False):  # rotation and polarity
@@ -61,7 +61,7 @@ class AnalogOsc:
 
         # beam parameters
         self.glow_radius = glow_radius # blur scale radius in pixels (small and wide exponential glow/halo)
-        self.line_width = line_width # line width in pixels (small gaussian center)
+        self.beam_spread = beam_spread # line width in pixels (small gaussian center)
         self.beam_power = beam_power # energy per second of the electron beam
         self.flash_factor = flash_factor # multiplying factor for the fluorescence "flash"
 
@@ -186,7 +186,7 @@ class AnalogOsc:
         downscale = self.glow_downscale_factor
 
         # E: gaussian electron beam
-        beam = gaussian_filter(image, self.line_width*self.upscaling)
+        beam = gaussian_filter(image, self.beam_spread*self.upscaling)
 
         # multiply by graticule if enabled
         if self.graticule:

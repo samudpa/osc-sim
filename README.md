@@ -1,5 +1,5 @@
 # osc-sim
-**osc-sim** is a realistic, CUDA-accelerated CRT oscilloscope simulator and renderer for audio visualization, built on CuPy.
+**osc-sim** is a realistic, CUDA-accelerated CRT oscilloscope software renderer for audio visualization, built on CuPy.
 
 - [Overview](#overview)
 - [Usage](#usage)
@@ -54,7 +54,7 @@ For a comprehensive list of parameters, see [its dedicated section](#parameters)
 - `shutter`: shutter, as percentage of a single frame
 
 **Simulation quality**
-- `subsampling`: number of samples per frame
+- `subsampling`: number of signal samples per frame
 - `upscaling`: internal integer-upscaling for anti-aliasing
 - `glow_downscale_factor`: glow kernel downscaling for performance. Set to `1` to disable
 
@@ -62,7 +62,7 @@ For a comprehensive list of parameters, see [its dedicated section](#parameters)
 - `decay_time`: phosphor characteristic decay time in [s]
 - `flash_factor`: intensity of the fast-decaying fluorescence contribution
 - `beam_power`: electron beam intensity. Higher means brighter
-- `line_width`: electron beam spread in pixels
+- `beam_spread`: electron beam spread in pixels
 - `glow_radius`: glow halo size in pixels
 
 **Signal processing**
@@ -77,9 +77,9 @@ For a comprehensive list of parameters, see [its dedicated section](#parameters)
 - `grain`: multiplicative noise intensity
 - `background_level`: background light level. Set to `0` to disable
 
-**Graticule**
+**Grid**
 - `grid_opacity`: grid opacity. Set to `0` to disable the grid
-- `grid_params`: dictionary with graticule parameters. The available parameters are the following
+- `grid_params`: dictionary with grid parameters. The available parameters are the following
 ```python
 grid_params = {
     'thickness': 2.4,       # thickness of the grid lines
